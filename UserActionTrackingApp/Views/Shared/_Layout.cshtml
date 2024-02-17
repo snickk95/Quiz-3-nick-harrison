@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@model HomeViewModel
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -39,12 +40,16 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - UserActionTrackingApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <!---print out the vist count with and without cookies using the home controller model--->
+            &copy; 2022 - UserActionTrackingApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> - the number of visits to the page count is @Model.totalCount and @Model.currentCount visits this session!
+           
         </div>
-    </footer>
+    </footer >
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+   
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
