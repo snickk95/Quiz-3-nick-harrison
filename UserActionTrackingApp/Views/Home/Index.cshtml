@@ -1,0 +1,11 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <p>Check out our <a asp-controller="other" asp-action="Index">other page</a>!</p>
+</div>
+<div class="footer">
+    <p asp-controller="Home" asp-action="Index">the number of visits to the page count is @Model.totalCount and @Model.currentCount this session!</p>
+</div>
